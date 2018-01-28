@@ -67,14 +67,12 @@ function getMap() {
 // Overlay the screen with rain
 function rain() {
 	console.log("It is raining!");
-    new RainyDay({
-        image: 'background',
-    });
 }
 
 // Overlay the screen with snow
 function snow() {
 	console.log("It is snowing!");
+	$('#snow').css('visibility', 'visible');
 }
 
 // Overlay the screen with clouds
@@ -90,6 +88,7 @@ function fog() {
 
 function stopWeather() {
 	$("#clouds").html("");
+	$('#snow').css('visibility', 'hidden');
 }
 
 getLocation(getWeather, getMap); // Get location before checking weather and map
