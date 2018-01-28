@@ -34,8 +34,18 @@ function getLocation(callbackWeather, callbackMap) {
 function getWeather() {
 	$.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=f0226db01036e625782a08842bf20938", function(data) {
 		//console.log(data);
-		weatherType = data.weather[0].main;
 		$("#forecastText").html(data.weather[0].description); // Update weather
+		weatherType = data.weather[0].main;
+		stopWeather(); // Delete all weather effects
+		if (weatherType === "Clouds") {
+			cloud();
+		} else if (weatherType === "Drizzle" || weatherType === "Rain" || weatherType === "Thunderstorm") {
+			rain();
+		} else if (weatherType === "Snow") {
+			snow();
+		} else if (weatherType === "Atmostphere") {
+			fog();
+		};
 	});
 }
 
@@ -50,13 +60,16 @@ function getMap() {
 			var imgURL = "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + lon + "&zoom=18&size=" + width + "x" + height+ "&maptype=satellite&key=AIzaSyDL5jkHCL3Jhe409CEeG83oW2DU3XqqTu4";
 		}
 		//console.log(imgURL);
-		$("body").css('background-image', 'url(' + imgURL + ')');
+		$("#background").css('background-image', 'url(' + imgURL + ')');
 	})
 }
 
 // Overlay the screen with rain
 function rain() {
 	console.log("It is raining!");
+    new RainyDay({
+        image: 'background',
+    });
 }
 
 // Overlay the screen with snow
@@ -67,11 +80,16 @@ function snow() {
 // Overlay the screen with clouds
 function cloud() {
 	console.log("It is cloudy!");
+	$("#clouds").html("<div class=\"cloudImg\"><img height=" + (height/2) + " src=\"images/cloud.png\"></div>");
 }
 
 // Overlay the screen with fog
 function fog() {
 	console.log("It is foggy!");
+}
+
+function stopWeather() {
+	$("#clouds").html("");
 }
 
 getLocation(getWeather, getMap); // Get location before checking weather and map

@@ -1,13 +1,18 @@
 body, html {
 	height: 100%;
 	text-align: center;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	margin: 0;
+}
+
+#background {
 	background-position: center center;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 	background-size: cover;
-	overflow-x: hidden;
-	overflow-y: hidden;
+	height: 100%;
 }
 
 .content {
@@ -17,6 +22,44 @@ body, html {
 	left: 0;
 	top: 0;
 	position: fixed;
+}
+
+#clouds {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.cloudImg {
+	position: absolute;
+	left: 1px;
+	top: 1px;
+	-webkit-animation: drift 120s linear infinite;
+	-moz-animation: drift 120s linear infinite;
+	-o-animation: drift 120s linear infinite;
+}
+@-webkit-keyframes drift{
+	0% {left: 0%; opacity: 0.0;}
+	10% {left: 10%; opacity: 1.0;}
+	70% {left: 70%; opacity: 1;}
+	80% { left: 80%; opacity: 0.0;}
+	100% {left: 100%; opacity: 0.0;}
+}
+@-moz-keyframes drift{
+	0% {left: 0%; opacity: 0.0;}
+	10% {left: 10%; opacity: 1.0;}
+	70% {left: 70%; opacity: 1;}
+	80% { left: 80%; opacity: 0.0;}
+	100% {left: 100%; opacity: 0.0;}
+}
+@-o-keyframes drift{
+	0% {left: 0%; opacity: 0.0;}
+	10% {left: 10%; opacity: 1.0;}
+	70% {left: 70%; opacity: 1;}
+	80% { left: 80%; opacity: 0.0;}
+	100% {left: 100%; opacity: 0.0;}
 }
 
 #location {
@@ -47,6 +90,7 @@ body, html {
 	font-size: 200%;
 	margin-top: 20px;
 	text-align: center;
+	padding: 0% 1%;
 }
 #submitButton:hover {
 	background-color: #000000;

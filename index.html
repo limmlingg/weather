@@ -6,20 +6,27 @@
 	<link href="https://fonts.googleapis.com/css?family=Marvel|Caveat" rel="stylesheet">
 </head>
 	<body>
-		<div class="content">
-			<p id="forecastText">Where are you?</p>
-			<form>
-				<input id="location" type="text" name="location" placeholder="e.g. School of Computing" autocomplete="off" maxlength="200">
-				<br>
-				<input id="submitButton" value="Find Location" onclick="findLocation()">
-			</form>
-		</div>
+		<div id="background"></div>
+
+		<!--Inspired by https://codepen.io/Digibolt/pen/rmhJH-->
+		<div id="clouds"></div>
 
 		<!--Inspired by https://codepen.io/agensjono/pen/gbqeD-->
 		<section id="snow"></section>
 
+
+		<div class="content" id="content">
+			<p id="forecastText">Where are you?</p>
+			<form>
+				<input id="location" type="text" name="location" placeholder="e.g. Tembusu College" autocomplete="off" autofocus="on" maxlength="200">
+				<br>
+				<input id="submitButton" value="Find Location" onclick="findLocation()" type="button">
+			</form>
+		</div>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="script.js"></script>
+		<script src="rainyday.js"></script>
 		<link href="style.css" rel="stylesheet">
 	</body>
 </html>
