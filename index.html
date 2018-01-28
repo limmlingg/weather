@@ -8,7 +8,11 @@
 	<body>
 		<div class="content">
 			<p id="forecastText">Where are you?</p>
-			<input id="location" type="text" name="location" placeholder="e.g. School of Computing" maxlength="200">
+			<form>
+				<input id="location" type="text" name="location" placeholder="e.g. School of Computing" autocomplete="off" maxlength="200">
+				<br>
+				<input id="submitButton" value="Find Location" onclick="findLocation()">
+			</form>
 		</div>
 
 		<!--Inspired by https://codepen.io/agensjono/pen/gbqeD-->

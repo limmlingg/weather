@@ -19,7 +19,7 @@ body, html {
 	position: fixed;
 }
 
-input {
+#location {
 	background-color: transparent;
 	border-style: none;
 	color: #000000;
@@ -30,8 +30,9 @@ input {
 	-webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
     transition: background-color 1000ms linear;
+    padding: 0.2%;
 }
-input:focus {
+#location:focus {
 	background-color: #eeeeee;
 	-webkit-transition: background-color 1000ms linear;
     -ms-transition: background-color 1000ms linear;
@@ -39,10 +40,29 @@ input:focus {
 	outline: none;
 }
 
+#submitButton {
+	background-color: #cccccc;
+	border: 0;
+	font-family: 'Marvel', sans-serif;
+	font-size: 200%;
+	margin-top: 20px;
+	text-align: center;
+}
+#submitButton:hover {
+	background-color: #000000;
+	color: #ffffff;
+	cursor: pointer;
+}
+#submitButton:active {
+	background-color: #000000;
+	color: #ffffff
+	outline:none;
+}
+
 p {
 	font-family: 'Marvel', sans-serif;
 	font-size: 800%;
 	position: relative;
-	padding: 10% 0 0 0;
+	padding: 10% 0 5% 0;
 	margin: 0;
 }
